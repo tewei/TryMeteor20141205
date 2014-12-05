@@ -1,0 +1,24 @@
+<head>
+    <title>教學</title>
+</head>
+<body>
+<header>
+    <h1 align="center">Todo List</h1>
+</header>
+<form align="center" class="new_task">
+    <p><input type="text" name="text" placeholder="輸入新事項">
+    </p>
+</form>
+<!--列出tasks裡面的物件-->
+    {{#each tasks}}
+        {{> task}}
+    {{/each}}
+</body>
+<template name="task">
+    <div align="center" class="{{#if checked}}checked{{/if}}">
+    
+    <p><button class="delete">刪除</button>
+    <!--若這則task為checked，選取框將會是選取狀態-->
+    <input type="checkbox" checked="{{checked}}" class="toggle_checked">{{text}}</p>
+    </div>
+</template>
